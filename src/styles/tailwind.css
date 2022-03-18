@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .todo-item {
+    @apply flex items-center px-4 py-3 w-full justify-between  text-sm border-b border-lm-line dark:border-dm-line md:text-base bg-lm-secondry dark:bg-dm-secondary font-primary;
+
+    &__checkbox {
+      &::before {
+        content: "";
+        transform: translate(-50%, -50%);
+        @apply z-20 rounded-full h-0 w-0 bg-gradient-to-br from-grad-start to-grad-stop top-1/2 left-1/2 absolute;
+      }
+
+      &:checked::before {
+        transition: 0.4s;
+        @apply w-12 h-12 opacity-0;
+      }
+
+      &::after {
+        content: "\f00c";
+        transform: translate(-50%, -50%);
+        font-weight: 900;
+        font-family: "Font Awesome 5 Free";
+
+        @apply opacity-0 text-tiny md:text-sm text-white top-1/2 left-1/2 absolute;
+      }
+
+      &:checked {
+        @apply bg-gradient-to-br from-grad-start to-grad-stop;
+      }
+
+      &:checked::after {
+        @apply opacity-100;
+      }
+
+      @apply relative w-5 h-5 md:h-6 md:w-6 rounded-full border cursor-pointer hover:border-grad-stop dark:hover:border-grad-stop border-lm-line dark:border-dm-line bg-lm-secondry dark:bg-dm-secondary appearance-none;
+    }
+
+    &__cross {
+      opacity: 0;
+
+      &:active {
+        transform: scale(0.4);
+      }
+      path {
+        @apply fill-gray-600 dark:fill-gray-200 hover:fill-red-500 font-bold;
+      }
+
+      &:hover path {
+        @apply fill-red-500;
+      }
+    }
+
+    &__edit {
+      opacity: 0;
+    }
+
+    &:hover &__cross,
+    &:hover &__edit {
+      opacity: 1;
+    }
+  }
+}
