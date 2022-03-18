@@ -11,7 +11,7 @@ const Filter = () => {
         className={`${
           filterMode === "all"
             ? "text-primary"
-            : "text-lm-text-fade dark:text-dm-text-fade"
+            : "text-lm-text-fade dark:text-dm-text-fade hover:text-gray-800 dark:hover:text-white"
         }`}
       >
         All
@@ -21,7 +21,7 @@ const Filter = () => {
         className={`${
           filterMode === "active"
             ? "text-primary"
-            : "text-lm-text-fade dark:text-dm-text-fade"
+            : "text-lm-text-fade dark:text-dm-text-fade hover:text-gray-800 dark:hover:text-white"
         }`}
       >
         Active
@@ -31,7 +31,7 @@ const Filter = () => {
         className={`${
           filterMode === "completed"
             ? "text-primary"
-            : "text-lm-text-fade dark:text-dm-text-fade"
+            : "text-lm-text-fade dark:text-dm-text-fade hover:text-gray-800 dark:hover:text-white"
         }`}
       >
         Completed
