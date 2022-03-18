@@ -32,7 +32,7 @@ function App() {
 
           {/* Todo Items wrapper */}
           {state.length === 0 ? (
-            <div className="flex flex-col items-center justify-center py-3 mt-8 rounded-md shadow-md h-72 bg-lm-secondry dark:bg-dm-secondary">
+            <div className="flex flex-col items-center justify-center px-3 py-3 mt-8 rounded-md shadow-md h-72 bg-lm-secondry dark:bg-dm-secondary">
               <p className="text-lm-text-fade dark:text-dm-text-fade">
                 No item added yet! Try adding one
               </p>
